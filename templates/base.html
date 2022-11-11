@@ -1,0 +1,88 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LmStudios</title>
+      <!--- basic page needs
+    ================================================== -->
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/base.css">
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/vendor.css">
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/main.css">
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/home.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="{{ STATIC_PREFIX }}js/modernizr.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{{ STATIC_PREFIX }}studiologo.jpg" type="image/x-icon">
+    <link rel="icon" href="{{ STATIC_PREFIX }}studiologo.jpg" type="image/x-icon">
+  </head>
+  <body onload="myFunction()" style="margin:0">
+  <div id="top">
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <img id="loader" src="{{ STATIC_PREFIX }}pre-loader.gif">
+    </div>
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="row">
+            <div class="header-logo" >
+                <a class="site-logo smoothscroll"  href="#home">
+                    <img style="width: 50px;height: 40px;" src="{{ STATIC_PREFIX }}studiologo.jpg" alt="Homepage">
+                </a>
+            </div>
+
+            <nav class="header-nav-wrap">
+                <ul class="header-main-nav">
+                    <li class="current"><a href="/#home" title="intro">HOME</a></li>
+                    <li><a href="#art" title="art">ART</a></li>
+                    <li><a href="#architecture" title="architecture">ARCHITECTURE</a></li>
+                    <li><a href="#literature" title="literature">LITERATURE</a></li>
+                    <li><a href="#store" title="store">STORE</a></li>
+                    <li><a href="{% url 'blog-home' %}" title="blog">BLOG</a></li>
+                </ul>
+
+                <div class="header-cta">
+                    <a href="#contact" class="btn btn--primary header-cta__btn smoothscroll">Contact Us</a>
+                </div>
+            </nav> <!-- end header-nav-wrap -->
+
+            <a class="header-menu-toggle" href="#"><span>"Menu"</span></a>
+        </div>
+
+    </header>
+    {% block content %}
+    {% endblock content %}
+  </div>
+    <script>
+        var myVar;
+        function myFunction() {
+          myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+          document.getElementById("preloader").style.display = "none";
+          document.getElementById("top").style.display = "block";
+        }
+    </script>
+    <script src="{{ STATIC_PREFIX }}js/jquery-3.2.1.min.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/plugins.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/main.js"></script>
+  </body>
+</html>
