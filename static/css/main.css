@@ -580,24 +580,13 @@ form,
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 6px;
-  height: 6px;
+  width: 170px;
+  height: 150px;
   padding: 0;
   display: inline-block;
   -webkit-transform: translate3d(-50%, -50%, 0);
   -ms-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
-}
-
-#loader > div {
-  content: "";
-  background: #5b4f96;
-  width: 6px;
-  height: 6px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
 }
 
 #loader > div:nth-of-type(1) {
