@@ -1,12 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<article class="home-content">
+<article class="home-content" style="display: flex;flex-wrap: wrap;">
     {% for post in posts %}
-    {{ post.title }}
-        {{ post.date_posted|date:"F d, Y" }}
-        {{ post.author.profile.image.url }}
+        <div class="mycontainer">
+  <div class="card">
+    <div class="card-header">
+      <img src="{{ post.image.url }}" alt="rover" />
+
+    </div>
+      <p style="margin-bottom: 0rem;font-size: 15px;
+    margin-left: 75px;"> {{ post.date_posted|date:"F d, Y" }}</p>
+    <div class="card-body">
+      <h4 style="margin-top: 0rem;">
+        {{ post.title }}
+      </h4>
+      <p style="word-break: break-word;">
+        {{ post.content }}
+      </p>
+    </div>
+  </div>
+
+</div>
     {% endfor %}
+
+
 
 {#    {% if is_paginated %}#}
 {##}
